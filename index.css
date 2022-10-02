@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.app-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+
+.app-title {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.add-item-input-container {
+    width: 500px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.add-item-input {
+    margin: 5px;
+    max-width: 490px;
+    max-height: 40px;
+    color: darkgray;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+.additembtn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+
+.add-item-btn {
+    margin-top: 15px;
+    width: 150px;
+    height: 45px;
+    background-color: blueviolet;
+    color: #000;
+    border-radius: 5px;
+}
+
+.add-item-btn:hover {
+    background-color: rgb(157, 85, 224);
+    cursor: pointer;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 500px;
+    height: 800px;
+    background-color: bisque;
+    border-radius: 5px;
+}
+
+.todo-list-title-container {
+    margin: 5px;
+    max-width: 490px;
+    max-height: 30px;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.todo-list-title {
+    text-align: center;
+    font-size: 25px;
+    color: grey;
+    position: relative;
+}
+
+.new-todo-card {
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 490px;
+    height: 50px;
+    background-color: antiquewhite;
+    color: darkcyan
+}
+
+.todo-task-title {
+    text-decoration: none;
+}
+
+.todo-task-title.crossed {
+    text-decoration: line-through;
+}
+
+.delete-item-btn {
+    align-self: center;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
