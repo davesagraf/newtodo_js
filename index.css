@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
-    color: black;
+    background-color: rgb(250, 234, 247);
 }
 
 .app {
@@ -53,13 +53,14 @@ body {
     width: 150px;
     height: 45px;
     background-color: blueviolet;
-    color: #000;
+    color: #ffffff;
     border-radius: 5px;
 }
 
 .add-item-btn:hover {
     background-color: rgb(157, 85, 224);
     cursor: pointer;
+    color: #000;
 }
 
 .cards-container {
@@ -93,29 +94,59 @@ body {
 
 .new-todo-card {
     margin: 5px;
+    border: none;
+    border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 490px;
     height: 50px;
     background-color: antiquewhite;
-    color: darkcyan
+    color:hotpink;
 }
 
 .todo-task-title {
     text-decoration: none;
+    position: absolute;
+    left: 850px;
+    align-self: center;
+    text-align: center;
 }
 
 .todo-task-title.crossed {
     text-decoration: line-through;
+    position: absolute;
+    left: 850px;
+    align-self: center;
+    text-align: center;
 }
 
 .delete-item-btn {
+    position: absolute;
+    left: 1150px;
     align-self: center;
     text-align: center;
     width: 30px;
     height: 30px;
     cursor: pointer;
+    background-color: rgb(16, 252, 247);
+    color: deepskyblue;
+    border: 1px cornflowerblue solid;
+    border-radius: 5px;
+}
+
+.delete-item-btn:hover {
+    position: absolute;
+    left: 1150px;
+    align-self: center;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(207, 247, 247);
+    color: gray;
+    border: 1px snow solid;
+    border-radius: 5px;
 }
 
 .pagination {
@@ -142,6 +173,20 @@ body {
     border-radius: 5px;
 }
 
+.pagination-button:hover {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    width: 80px;
+    height: 50px;
+    background-color:rgb(250, 196, 130);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .pagination-count {
     margin: 5px;
     display: flex;
@@ -161,4 +206,20 @@ body {
     font-weight: 300;
     font-size: 16px;
     color: gray;
+}
+
+#complete-task {
+    position: absolute;
+    left: 733px;
+    align-self: center;
+    text-align: center;
+    background-color: rgb(247, 207, 223);
+}
+
+#complete-task:checked {
+    position: absolute;
+    left: 733px;
+    align-self: center;
+    text-align: center;
+    background-color: deeppink;
 }

@@ -1,3 +1,10 @@
+const music = new Audio;
+music.src = "./assets/skeyes.mp3"
+music.title = 'skeyes'
+music.preload = true;
+music.autoplay = true;
+music.loop = true;
+music.playbackRate = 1;
 //localStorage
 let todoList = JSON.parse(localStorage.getItem("todos")) || [];
 
@@ -34,7 +41,7 @@ todoList.length > 0
         newToDoCard.innerHTML = `<div class="new-todo-card" id="${todo.id}">
         <input type="checkbox" checked name="complete-task" id="complete-task">
         <h2 class="todo-task-title crossed" id="todo-task-title">${todo.title}</h2>
-        <button class="delete-item-btn" name="delete-task" id="delete-item-btn">Delete Task</button>
+        <button class="delete-item-btn" name="delete-task" id="delete-item-btn">x</button>
     </div>`;
       } else {
         newToDoCard.innerHTML = `<div class="new-todo-card" id="${todo.id}">
@@ -68,17 +75,21 @@ function addItem() {
 </div>`;
 
   cardsContainer.appendChild(newToDoCard);
-
-  if (todoList.length > 5) {
-    injectPage();
-    injectPagination();
-  }
 }
 
 addItemBtn.addEventListener("click", () => {
   if (addItemInput.value.length !== 0) {
     addItem();
     addItemInput.value = "";
+    if (todoList.length > 5) {
+      injectPage();
+      injectPagination();
+    }
+    //reload page once, when the number of items increases to start the navigation mapping
+    //enables the navigation nav bar
+    if (todoList.length === 6) {
+      location.reload();
+    }
   }
 });
 
@@ -133,6 +144,11 @@ cardsContainer.addEventListener("click", (e) => {
     todoList = JSON.parse(localStorage.getItem("todos"));
 
     taskCard.remove();
+    //reload page once, when the number of items decreases to fit just one page
+    //removes pagination nav bar
+    if (todoList.length === 5) {
+      location.reload();
+    }
   }
 });
 
@@ -155,7 +171,7 @@ injectPage = () => {
             ? `<div class="new-todo-card" id="${todo.id}">
           <input type="checkbox" checked name="complete-task" id="complete-task">
           <h2 class="todo-task-title crossed" id="todo-task-title">${todo.title}</h2>
-          <button class="delete-item-btn" name="delete-task" id="delete-item-btn">Delete Task</button>
+          <button class="delete-item-btn" name="delete-task" id="delete-item-btn">x</button>
       </div>`
             : `<div class="new-todo-card" id="${todo.id}">
       <input type="checkbox" name="complete-task" id="complete-task">
@@ -165,7 +181,9 @@ injectPage = () => {
         )
         .join("")
     : "";
-  cardsContainer.innerHTML = list;
+  cardsContainer.innerHTML = `<div class="todo-list-title-container" id="todo-list-title-container">
+  <h3 class="todo-list-title">To Do</h3>
+</div>` + list;
 };
 
 //paging logic
@@ -182,9 +200,7 @@ endIndex = 5;
 selectedPage = 1;
 
 if (todoList.length > 5) {
-  //fill the paging list
   injectPagination();
-  //start mapping the list
   injectPage();
 }
 
