@@ -1,10 +1,3 @@
-const music = new Audio;
-music.src = "./assets/skeyes.mp3"
-music.title = 'skeyes'
-music.preload = true;
-music.autoplay = true;
-music.loop = true;
-music.playbackRate = 1;
 //localStorage
 let todoList = JSON.parse(localStorage.getItem("todos")) || [];
 
@@ -223,3 +216,12 @@ goNext = () => {
     injectPagination();
   }
 };
+
+//bonus track :)
+const music = new Audio;
+music.src = "./assets/skeyes.mp3"
+music.title = 'skeyes'
+music.preload = true;
+music.autoplay = true;
+music.loop = true;
+music.playbackRate = 1;
