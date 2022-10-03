@@ -56,7 +56,7 @@ todoList.length > 0
   : null;
 
 //add item to page
-function addItem() {
+addItem = () => {
   const newToDoItem = new todoItem();
 
   newToDoItem.id = new Date().getTime();
@@ -76,7 +76,7 @@ function addItem() {
 </div>`;
 
   cardsContainer.appendChild(newToDoCard);
-}
+};
 
 addItemBtn.addEventListener("click", () => {
   //empty title validation
