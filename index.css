@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
-    color: black;
+    background-color: rgb(250, 234, 247);
 }
 
 .app {
@@ -20,6 +20,7 @@ body {
 .app-title {
     font-size: 18px;
     font-weight: 300;
+    color: rgb(61, 63, 94);
 }
 
 .add-item-input-container {
@@ -30,6 +31,7 @@ body {
     align-self: center;
     justify-content: center;
     border-radius: 5px;
+    background-color: rgb(250, 234, 247);
 }
 
 .add-item-input {
@@ -39,6 +41,8 @@ body {
     color: darkgray;
     font-size: 25px;
     border-radius: 5px;
+    background-color:  rgb(232, 243, 247);
+    border: 0.1em ghostwhite solid;
 }
 
 .additembtn-container {
@@ -53,13 +57,21 @@ body {
     width: 150px;
     height: 45px;
     background-color: blueviolet;
-    color: #000;
+    color: rgb(241, 216, 247);
     border-radius: 5px;
+    box-shadow: none;
+    border: 1px rgb(160, 117, 193);
+    font-size: medium;
 }
 
 .add-item-btn:hover {
     background-color: rgb(157, 85, 224);
     cursor: pointer;
+    color: rgb(25, 27, 49);
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px rgb(151, 108, 247);
+    font-size: large;
 }
 
 .cards-container {
@@ -69,9 +81,9 @@ body {
     margin-top: 15px;
     margin-left: 15px;
     width: 500px;
-    height: 800px;
+    height: 400px;
     background-color: bisque;
-    border-radius: 5px;
+    border-radius: 5px; 
 }
 
 .todo-list-title-container {
@@ -93,27 +105,132 @@ body {
 
 .new-todo-card {
     margin: 5px;
+    border: none;
+    border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 490px;
     height: 50px;
     background-color: antiquewhite;
-    color: darkcyan
+    color:hotpink;
 }
 
 .todo-task-title {
     text-decoration: none;
+    position: absolute;
+    left: 790px;
+    align-self: center;
+    text-align: center;
 }
 
 .todo-task-title.crossed {
     text-decoration: line-through;
+    position: absolute;
+    left: 790px;
+    align-self: center;
+    text-align: center;
 }
 
 .delete-item-btn {
+    position: absolute;
+    left: 1150px;
     align-self: center;
     text-align: center;
     width: 30px;
     height: 30px;
     cursor: pointer;
+    background-color: rgb(16, 252, 247);
+    color: deepskyblue;
+    border: 1px cornflowerblue solid;
+    border-radius: 5px;
+}
+
+.delete-item-btn:hover {
+    position: absolute;
+    left: 1150px;
+    align-self: center;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(207, 247, 247);
+    color: gray;
+    border: 1px snow solid;
+    border-radius: 5px;
+}
+
+.pagination {
+    width: 300px;
+    height: 130px;
+    display: flex;
+    flex-direction: row;
+    color: #000;
+    list-style: none;
+    text-decoration: none;
+    margin-left: 800px;
+}
+
+.pagination-button {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    width: 80px;
+    height: 50px;
+    background-color:bisque;
+    border: none;
+    border-radius: 5px;
+}
+
+.pagination-button:hover {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    width: 80px;
+    height: 50px;
+    background-color:rgb(250, 196, 130);
+    border: 1px rgb(247, 216, 160) solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination-count {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    width: 50px;
+    height: 50px;
+    background-color:bisque;
+    border: none;
+    border-radius: 5px;
+}
+
+.pagination-link {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: gray;
+}
+
+#complete-task {
+    position: absolute;
+    left: 733px;
+    align-self: center;
+    text-align: center;
+    background-color: rgb(247, 207, 223);
+}
+
+#complete-task:checked {
+    position: absolute;
+    left: 733px;
+    align-self: center;
+    text-align: center;
+    background-color: deeppink;
 }
