@@ -21,6 +21,14 @@ const appDiv = document.getElementById("app");
 
 const addItemInput = document.getElementById("add-item-input");
 
+//input validation
+addItemInput.addEventListener("input", (e) => {
+  if (e.target.value.trim().length > 1) {
+    const helperText = document.getElementById("helper-message");
+    helperText.classList.add("hidden");
+  }
+});
+
 const addItemBtn = document.getElementById("add-item-btn");
 
 const cardsContainer = document.getElementById("cards-container");
@@ -48,7 +56,7 @@ todoList.length > 0
   : null;
 
 //add item to page
-function addItem() {
+addItem = () => {
   const newToDoItem = new todoItem();
 
   newToDoItem.id = new Date().getTime();
@@ -68,12 +76,19 @@ function addItem() {
 </div>`;
 
   cardsContainer.appendChild(newToDoCard);
-}
+};
 
 addItemBtn.addEventListener("click", () => {
-  if (addItemInput.value.length !== 0) {
+  //empty title validation
+  if (addItemInput.value.trim().length === 0) {
+    const helperText = document.getElementById("helper-message");
+    helperText.classList.remove("hidden");
+  }
+  //accept item title
+  if (addItemInput.value.trim().length !== 0) {
     addItem();
     addItemInput.value = "";
+    //if more than 5 items, pagination starts
     if (todoList.length > 5) {
       injectPage();
       injectPagination();
@@ -174,7 +189,8 @@ injectPage = () => {
         )
         .join("")
     : "";
-  cardsContainer.innerHTML = `<div class="todo-list-title-container" id="todo-list-title-container">
+  cardsContainer.innerHTML =
+    `<div class="todo-list-title-container" id="todo-list-title-container">
   <h3 class="todo-list-title">To Do</h3>
 </div>` + list;
 };
@@ -218,9 +234,9 @@ goNext = () => {
 };
 
 //bonus track :)
-const music = new Audio;
-music.src = "./assets/skeyes.mp3"
-music.title = 'skeyes'
+const music = new Audio();
+music.src = "./assets/skeyes.mp3";
+music.title = "skeyes";
 music.preload = true;
 music.autoplay = true;
 music.loop = true;

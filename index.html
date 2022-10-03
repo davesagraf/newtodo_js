@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="./index.css">
     <meta charset="UTF-8">
@@ -7,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO APP</title>
 </head>
+
 <body>
     <script src="./index.js" defer></script>
     <div class="app" id="app">
@@ -16,7 +18,11 @@
             </h1>
         </div>
         <div class="add-item-input-container" id="add-item-input-container">
-            <input type="text" placeholder="i need to..." minlength="1" maxlength="25" class="add-item-input" name="add-item-input" id="add-item-input" value="">
+            <input type="text" placeholder="i need to..." class="add-item-input" name="add-item-input"
+                id="add-item-input" value="">
+        </div>
+        <div class="message-container" id="message-container">
+            <h4 class="helper-message hidden" id="helper-message">title is empty</h4>
         </div>
         <div class="additembtn-container">
             <button class="add-item-btn" id="add-item-btn">add item</button>
@@ -29,4 +35,5 @@
         <ul class="pagination" id="paging"></ul>
     </div>
 </body>
+
 </html>
