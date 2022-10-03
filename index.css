@@ -20,6 +20,7 @@ body {
 .app-title {
     font-size: 18px;
     font-weight: 300;
+    color: rgb(61, 63, 94);
 }
 
 .add-item-input-container {
@@ -30,6 +31,7 @@ body {
     align-self: center;
     justify-content: center;
     border-radius: 5px;
+    background-color: rgb(250, 234, 247);
 }
 
 .add-item-input {
@@ -39,6 +41,8 @@ body {
     color: darkgray;
     font-size: 25px;
     border-radius: 5px;
+    background-color:  rgb(232, 243, 247);
+    border: 0.1em ghostwhite solid;
 }
 
 .additembtn-container {
@@ -53,14 +57,21 @@ body {
     width: 150px;
     height: 45px;
     background-color: blueviolet;
-    color: #ffffff;
+    color: rgb(241, 216, 247);
     border-radius: 5px;
+    box-shadow: none;
+    border: 1px rgb(160, 117, 193);
+    font-size: medium;
 }
 
 .add-item-btn:hover {
     background-color: rgb(157, 85, 224);
     cursor: pointer;
-    color: #000;
+    color: rgb(25, 27, 49);
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px rgb(151, 108, 247);
+    font-size: large;
 }
 
 .cards-container {
@@ -72,7 +83,7 @@ body {
     width: 500px;
     height: 400px;
     background-color: bisque;
-    border-radius: 5px;
+    border-radius: 5px; 
 }
 
 .todo-list-title-container {
@@ -108,7 +119,7 @@ body {
 .todo-task-title {
     text-decoration: none;
     position: absolute;
-    left: 850px;
+    left: 790px;
     align-self: center;
     text-align: center;
 }
@@ -116,7 +127,7 @@ body {
 .todo-task-title.crossed {
     text-decoration: line-through;
     position: absolute;
-    left: 850px;
+    left: 790px;
     align-self: center;
     text-align: center;
 }
@@ -182,7 +193,7 @@ body {
     width: 80px;
     height: 50px;
     background-color:rgb(250, 196, 130);
-    border: none;
+    border: 1px rgb(247, 216, 160) solid;
     border-radius: 5px;
     cursor: pointer;
 }
