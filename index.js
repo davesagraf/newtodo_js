@@ -41,13 +41,17 @@ todoList.length > 0
       if (todo.complete === true) {
         newToDoCard.innerHTML = `<div class="new-todo-card" id="${todo.id}">
         <input type="checkbox" checked name="complete-task" id="complete-task">
+        <div class="todo-title-wrap" id="todo-title-wrap">
         <h2 class="todo-task-title crossed" id="todo-task-title">${todo.title}</h2>
+        </div>
         <button class="delete-item-btn" name="delete-task" id="delete-item-btn">x</button>
     </div>`;
       } else {
         newToDoCard.innerHTML = `<div class="new-todo-card" id="${todo.id}">
     <input type="checkbox" name="complete-task" id="complete-task">
+    <div class="todo-title-wrap" id="todo-title-wrap">
     <h2 class="todo-task-title" id="todo-task-title">${todo.title}</h2>
+    </div>
     <button class="delete-item-btn" name="delete-task" id="delete-item-btn">x</button>
 </div>`;
       }
@@ -71,7 +75,9 @@ addItem = () => {
 
   newToDoCard.innerHTML = `<div class="new-todo-card" id=${newToDoItem.id}>
     <input type="checkbox" name="complete-task" id="complete-task">
+    <div class="todo-title-wrap" id="todo-title-wrap">
     <h2 class="todo-task-title" id="todo-task-title">${addItemInput.value}</h2>
+    </div>
     <button class="delete-item-btn" id="delete-item-btn">x</button>
 </div>`;
 
@@ -178,12 +184,16 @@ injectPage = () => {
           todo.complete
             ? `<div class="new-todo-card" id="${todo.id}">
           <input type="checkbox" checked name="complete-task" id="complete-task">
+          <div class="todo-title-wrap" id="todo-title-wrap">
           <h2 class="todo-task-title crossed" id="todo-task-title">${todo.title}</h2>
+          </div>
           <button class="delete-item-btn" name="delete-task" id="delete-item-btn">x</button>
       </div>`
             : `<div class="new-todo-card" id="${todo.id}">
       <input type="checkbox" name="complete-task" id="complete-task">
+      <div class="todo-title-wrap" id="todo-title-wrap">
       <h2 class="todo-task-title" id="todo-task-title">${todo.title}</h2>
+      </div>
       <button class="delete-item-btn" name="delete-task" id="delete-item-btn">x</button>
   </div>`
         )
@@ -234,10 +244,10 @@ goNext = () => {
 };
 
 //bonus track :)
-const music = new Audio();
-music.src = "./assets/skeyes.mp3";
-music.title = "skeyes";
-music.preload = true;
-music.autoplay = true;
-music.loop = true;
-music.playbackRate = 1;
+// const music = new Audio();
+// music.src = "./assets/skeyes.mp3";
+// music.title = "skeyes";
+// music.preload = true;
+// music.autoplay = true;
+// music.loop = true;
+// music.playbackRate = 1;
