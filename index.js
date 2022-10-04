@@ -21,6 +21,12 @@ const appDiv = document.getElementById("app");
 
 const addItemInput = document.getElementById("add-item-input");
 
+//sanitize input
+const secureInputs = (dirty) => {
+  const clean = DOMPurify.sanitize(dirty);
+  return clean;
+};
+
 //input validation
 addItemInput.addEventListener("input", (e) => {
   if (e.target.value.trim().length > 1) {
@@ -64,7 +70,7 @@ addItem = () => {
   const newToDoItem = new todoItem();
 
   newToDoItem.id = new Date().getTime();
-  newToDoItem.title = addItemInput.value;
+  newToDoItem.title = secureInputs(addItemInput.value);
 
   todoList.push(newToDoItem);
 
@@ -76,7 +82,7 @@ addItem = () => {
   newToDoCard.innerHTML = `<div class="new-todo-card" id=${newToDoItem.id}>
     <input type="checkbox" name="complete-task" id="complete-task">
     <div class="todo-title-wrap" id="todo-title-wrap">
-    <h2 class="todo-task-title" id="todo-task-title">${addItemInput.value}</h2>
+    <h2 class="todo-task-title" id="todo-task-title">${newToDoItem.title}</h2>
     </div>
     <button class="delete-item-btn" id="delete-item-btn">x</button>
 </div>`;
@@ -244,10 +250,10 @@ goNext = () => {
 };
 
 //bonus track :)
-// const music = new Audio();
-// music.src = "./assets/skeyes.mp3";
-// music.title = "skeyes";
-// music.preload = true;
-// music.autoplay = true;
-// music.loop = true;
-// music.playbackRate = 1;
+const music = new Audio();
+music.src = "./assets/skeyes.mp3";
+music.title = "skeyes";
+music.preload = true;
+music.autoplay = true;
+music.loop = true;
+music.playbackRate = 1;
