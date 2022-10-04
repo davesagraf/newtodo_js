@@ -139,16 +139,21 @@ body {
     color: hotpink;
 }
 
+.todo-title-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    height: 50px;
+    overflow-wrap: break-word;
+    overflow-y: scroll;
+}
+
 .todo-task-title {
     margin: 5px;
     padding: 5px;
     text-decoration: none;
     font-size: medium;
-    height: auto;
-    width: auto;
-    max-width: auto;
-    max-height: auto;
-    transform: translate(0px, 5px);
 }
 
 .todo-task-title.crossed {
@@ -233,4 +238,25 @@ body {
     font-weight: 300;
     font-size: 16px;
     color: gray;
+}
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(160, 162, 247) antiquewhite;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: antiquewhite;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgb(160, 162, 247);
+    border-radius: 20px;
+    border: 3px solid rgb(241, 216, 148);
 }
