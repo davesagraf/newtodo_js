@@ -13,9 +13,9 @@ let pagingList;
 const todoItem = (title) => {
   return {
     id: new Date().getTime(),
-    title: secureInputs(addItemInput.value),
+    title: secureInputs(addItemInput.value).replace(/[!@#$%^&*<>]/g, ""),
     complete: false,
-  }
+  };
 };
 
 //initial DOM elements
@@ -161,7 +161,10 @@ cardsContainer.addEventListener("click", (e) => {
 
     todoList = JSON.parse(localStorage.getItem("todos"));
 
+    const taskCardDiv = taskCard.parentElement;
+
     taskCard.remove();
+    taskCardDiv.remove();
     //reload page once, when the number of items decreases to fit just one page
     //removes pagination nav bar
     if (todoList.length === 5) {
