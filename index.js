@@ -251,10 +251,10 @@ goNext = () => {
 };
 
 //bonus track :)
-// const music = new Audio();
-// music.src = "./assets/skeyes.mp3";
-// music.title = "skeyes";
-// music.preload = true;
-// music.autoplay = true;
-// music.loop = true;
-// music.playbackRate = 1;
+const music = new Audio();
+music.src = "./assets/skeyes.mp3";
+music.title = "skeyes";
+music.preload = true;
+music.autoplay = true;
+music.loop = true;
+music.playbackRate = 1;
