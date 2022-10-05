@@ -10,10 +10,12 @@ let endIndex;
 let pagingList;
 
 //ToDo item object
-const todoItem = function () {
-  this.id = null;
-  this.title = "";
-  this.complete = false;
+const todoItem = (title) => {
+  return {
+    id: new Date().getTime(),
+    title: secureInputs(addItemInput.value),
+    complete: false,
+  }
 };
 
 //initial DOM elements
@@ -67,11 +69,7 @@ todoList.length > 0
 
 //add item to page
 addItem = () => {
-  const newToDoItem = new todoItem();
-
-  newToDoItem.id = new Date().getTime();
-  newToDoItem.title = secureInputs(addItemInput.value);
-
+  const newToDoItem = todoItem();
   todoList.push(newToDoItem);
 
   let data = JSON.stringify(todoList);
@@ -250,10 +248,10 @@ goNext = () => {
 };
 
 //bonus track :)
-const music = new Audio();
-music.src = "./assets/skeyes.mp3";
-music.title = "skeyes";
-music.preload = true;
-music.autoplay = true;
-music.loop = true;
-music.playbackRate = 1;
+// const music = new Audio();
+// music.src = "./assets/skeyes.mp3";
+// music.title = "skeyes";
+// music.preload = true;
+// music.autoplay = true;
+// music.loop = true;
+// music.playbackRate = 1;
